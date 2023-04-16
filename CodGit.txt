@@ -1,0 +1,202 @@
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~
+$ git --version
+git version 2.40.0.windows.1
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~
+$ mkdir --ProjectSt
+mkdir: unknown option -- ProjectSt
+Try 'mkdir --help' for more information.
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~
+$ mkdir ProjectSt
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~
+$ cd ProjectSt
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt
+$ git init
+Initialized empty Git repository in C:/Users/Андрей/ProjectSt/.git/
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git config --global user.name "sdsvo3"
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git config --global user.mail "sdsvo3@gmail.com"
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ ssh-keygen -t ed24126 -C "sdsvo3@gmail.com"
+unknown key type ed24126
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ ssh-keygen -t ed25519 -C "sdsvo3@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/Андрей/.ssh/id_ed25519):
+/c/Users/Андрей/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Андрей/.ssh/id_ed25519
+Your public key has been saved in /c/Users/Андрей/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:BSPnp74z2QSUTi9jGCnggvgnD0I7fmEtln4TL6G+33s sdsvo3@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|  ..  ..+.       |
+|o.  . o++o       |
+|+..  . *..o      |
+|.o. o . *+.      |
+|.o+*.+ .S+       |
+|..==+ +.  .      |
+| . +.+ ..+       |
+|  o . + +E.      |
+|   oo. o+o       |
++----[SHA256]-----+
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ eval "$(ssh-agent -s)"
+Agent pid 1672
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ ssh-add ~/.ssh/id_ed25519
+Identity added: /c/Users/Андрей/.ssh/id_ed25519 (sdsvo3@gmail.com)
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ cat ~/.ssh/id_ed22219
+cat: /c/Users/Андрей/.ssh/id_ed22219: No such file or directory
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ cat ~/.ssh/id_ed25519
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACDiVXFDyJXk5B9vchWPFj5IDpp6UiyoG0rO3wxYovK3RgAAAJilp4SNpaeE
+jQAAAAtzc2gtZWQyNTUxOQAAACDiVXFDyJXk5B9vchWPFj5IDpp6UiyoG0rO3wxYovK3Rg
+AAAEA8WsXgHI/3IyREDdVp876ub976xlJRCth/Nu9XH5j4IuJVcUPIleTkH29yFY8WPkgO
+mnpSLKgbSs7fDFii8rdGAAAAEHNkc3ZvM0BnbWFpbC5jb20BAgMEBQ==
+-----END OPENSSH PRIVATE KEY-----
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOJVcUPIleTkH29yFY8WPkgOmnpSLKgbSs7fDFii8rdG sdsvo3@gmail.com
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ ^C
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ echo 'ПРИВЕТ' > readme2.md
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        readme2.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git add readme.md
+fatal: pathspec 'readme.md' did not match any files
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git add readme2.md
+warning: in the working copy of 'readme2.md', LF will be replaced by CRLF the next time Git touches it
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   readme2.md
+
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git commit 'add readme2'
+error: pathspec 'add readme2' did not match any file(s) known to git
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git commit -m 'add readme2'
+[master (root-commit) 27dca56] add readme2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme2.md
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git remote add origin git@github.com:sdsvo3/ProjectSt.git
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (master)
+$ git branch -M main
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (main)
+$ git push -u origin main
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 220 bytes | 44.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:sdsvo3/ProjectSt.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        zacat.JPG
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (main)
+$ git add .
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   zacat.JPG
+
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (main)
+$ git commit -m 'add zacat in pic'
+[main f6760b8] add zacat in pic
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 zacat.JPG
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (main)
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.17 MiB | 6.50 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:sdsvo3/ProjectSt.git
+   27dca56..f6760b8  main -> main
+branch 'main' set up to track 'origin/main'.
+
+Андрей@LAPTOP-RLSN8JT7 MINGW64 ~/ProjectSt (main)
